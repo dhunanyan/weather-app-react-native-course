@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "weather-app-course",
-    "slug": "weather-app-course",
+    "name": "weather",
+    "slug": "weather",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
+    "scheme": "acme",
+    "plugins": ["expo-router"],
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
@@ -23,12 +23,8 @@
     },
     "web": {
       "bundler": "metro",
-      "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "plugins": [
-      "expo-router"
-    ],
     "experiments": {
       "typedRoutes": true
     }
