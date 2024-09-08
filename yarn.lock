@@ -2083,6 +2083,14 @@
     component-type "^1.2.1"
     join-component "^1.1.0"
 
+"@shopify/react-native-skia@^1.3.11":
+  version "1.3.11"
+  resolved "https://registry.yarnpkg.com/@shopify/react-native-skia/-/react-native-skia-1.3.11.tgz#fc4793b6a71604007cfa178ed780fbf3a6a1991f"
+  integrity sha512-fIkxh77TVbIFAIFuJbB9wjNCvehOeARWsCOTSo5HdkjZ3/f4QPGR4RWN5zOMvi8aD83oRfJ6AVcnozFYYZREaA==
+  dependencies:
+    canvaskit-wasm "0.39.1"
+    react-reconciler "0.27.0"
+
 "@sideway/address@^4.1.5":
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.5.tgz#4bc149a0076623ced99ca8208ba780d65a99b9d5"
@@ -2336,6 +2344,11 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@web3-storage/multipart-parser/-/multipart-parser-1.0.0.tgz#6b69dc2a32a5b207ba43e556c25cc136a56659c4"
   integrity sha512-BEO6al7BYqcnfX15W2cnGR+Q566ACXAT9UQykORCWW80lmkpWsnEob6zJS1ZVBKsSJC8+7vJkHwlp+lXG1UCdw==
+
+"@webgpu/types@0.1.21":
+  version "0.1.21"
+  resolved "https://registry.yarnpkg.com/@webgpu/types/-/types-0.1.21.tgz#b181202daec30d66ccd67264de23814cfd176d3a"
+  integrity sha512-pUrWq3V5PiSGFLeLxoGqReTZmiiXwY3jRkIG5sLLKjyqNxrwm/04b4nw7LSmGWJcKk59XOM/YRTUwOzo4MMlow==
 
 "@xmldom/xmldom@^0.8.8":
   version "0.8.10"
@@ -2941,6 +2954,13 @@ caniuse-lite@^1.0.30001646:
   version "1.0.30001658"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001658.tgz#b5f7be8ac748a049ab06aa1cf7a1408d83f074ec"
   integrity sha512-N2YVqWbJELVdrnsW5p+apoQyYt51aBMSsBZki1XZEfeBCexcM/sf4xiAHcXQBkuOwJBXtWF7aW1sYX6tKebPHw==
+
+canvaskit-wasm@0.39.1:
+  version "0.39.1"
+  resolved "https://registry.yarnpkg.com/canvaskit-wasm/-/canvaskit-wasm-0.39.1.tgz#c3c8f3962cbabbedf246f7bcf90e859013c7eae9"
+  integrity sha512-Gy3lCmhUdKq+8bvDrs9t8+qf7RvcjuQn+we7vTVVyqgOVO1UVfHpsnBxkTZw+R4ApEJ3D5fKySl9TU11hmjl/A==
+  dependencies:
+    "@webgpu/types" "0.1.21"
 
 chalk@4, chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.2:
   version "4.1.2"
@@ -3866,6 +3886,11 @@ expo-linking@~6.3.1:
     expo-constants "~16.0.0"
     invariant "^2.2.4"
 
+expo-location@^17.0.1:
+  version "17.0.1"
+  resolved "https://registry.yarnpkg.com/expo-location/-/expo-location-17.0.1.tgz#3bdbf91066f1a40ec3468dc1807f3e106473f74c"
+  integrity sha512-m+OzotzlAXO3ZZ1uqW5GC25nXW868zN+ROyBA1V4VF6jGay1ZEs4URPglCVUDzZby2F5wt24cMzqDKw2IX6nRw==
+
 expo-modules-autolinking@1.11.2:
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/expo-modules-autolinking/-/expo-modules-autolinking-1.11.2.tgz#98245eb66f157bbfebebd2d576256ea7c683c605"
@@ -3886,7 +3911,7 @@ expo-modules-core@1.12.24:
   dependencies:
     invariant "^2.2.4"
 
-expo-router@~3.5.23:
+expo-router@^3.5.23:
   version "3.5.23"
   resolved "https://registry.yarnpkg.com/expo-router/-/expo-router-3.5.23.tgz#da038e28c64cb69f19d046d7c651c389c5207a3e"
   integrity sha512-Re2kYcxov67hWrcjuu0+3ovsLxYn79PuX6hgtYN20MgigY5ttX79KOIBEVGTO3F3y9dxSrGHyy5Z14BcO+usGQ==
@@ -6910,6 +6935,14 @@ react-native@0.74.3:
     ws "^6.2.2"
     yargs "^17.6.2"
 
+react-reconciler@0.27.0:
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.27.0.tgz#360124fdf2d76447c7491ee5f0e04503ed9acf5b"
+  integrity sha512-HmMDKciQjYmBRGuuhIaKA1ba/7a+UsM5FzOZsMO2JYHt9Jh8reCb7j1eDC95NOyUlKM9KRyvdx0flBuDvYSBoA==
+  dependencies:
+    loose-envify "^1.1.0"
+    scheduler "^0.21.0"
+
 react-refresh@^0.14.0, react-refresh@^0.14.2:
   version "0.14.2"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.2.tgz#3833da01ce32da470f1f936b9d477da5c7028bf9"
@@ -7191,6 +7224,13 @@ scheduler@0.24.0-canary-efb381bbf-20230505:
   version "0.24.0-canary-efb381bbf-20230505"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.24.0-canary-efb381bbf-20230505.tgz#5dddc60e29f91cd7f8b983d7ce4a99c2202d178f"
   integrity sha512-ABvovCDe/k9IluqSh4/ISoq8tIJnW8euVAWYt5j/bg6dRnqwQwiGO1F/V4AyK96NGF/FB04FhOUDuWj8IKfABA==
+  dependencies:
+    loose-envify "^1.1.0"
+
+scheduler@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.21.0.tgz#6fd2532ff5a6d877b6edb12f00d8ab7e8f308820"
+  integrity sha512-1r87x5fz9MXqswA2ERLo0EbOAU74DpIUO090gIasYTqlVoJeMcl+Z1Rg7WHz+qtPujhS/hGIt9kxZOYBV3faRQ==
   dependencies:
     loose-envify "^1.1.0"
 
