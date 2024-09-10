@@ -1,5 +1,3 @@
-import { TrapezoidBackground } from "../components/tabbar/elements";
-
 export const COLORS = {
   Home: {
     BackgroundGradient: {
@@ -67,6 +65,14 @@ export const COLORS = {
           color: "#48319d",
         },
       },
+    },
+  },
+  Sections: {
+    WeatherInfo: {
+      cityTextColor: "rgba(255, 255, 255, 1)",
+      temperatureColor: "rgba(255, 255, 255, 1)",
+      conditionColor: "rgba(235, 235, 245, 0.6)",
+      minMaxTextColor: "rgba(255, 255, 255, 1)",
     },
   },
 };

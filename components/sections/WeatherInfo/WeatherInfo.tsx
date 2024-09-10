@@ -22,7 +22,10 @@ export const WeatherInfo = ({ weather }: WeatherInfoPropsType) => {
   return (
     <View style={styles.container}>
       <Text style={styles.cityText}>{city}</Text>
-      <Text style={styles.temperature}>{temperature}</Text>
+      <Text style={styles.temperature}>
+        {temperature}
+        {DEGREE_SYMBOL}
+      </Text>
       <Text style={styles.condition}>{condition}</Text>
       <Text style={styles.minMaxText}>
         H: {high} {DEGREE_SYMBOL}L :{low}
