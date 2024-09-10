@@ -15,14 +15,17 @@ export const TabBarItems = () => {
   const trapezoidHeight = height * 0.12;
   const circleRadius = (trapezoidHeight * 0.51) / 2;
   const buttonCenterX = width / 2 - circleRadius;
-  const styles = styling(buttonCenterX);
+  const styles = styling(buttonCenterX, circleRadius);
 
   return (
     <View style={styles.container}>
       <MapIcon />
       <TrapezoidBackground width={trapezoidWidth} height={trapezoidHeight} />
+
       <Pressable style={styles.pessable}>
-        <CircleButton radius={circleRadius} />
+        {({ pressed }) => (
+          <CircleButton radius={circleRadius} pressed={pressed} />
+        )}
       </Pressable>
       <ListIcon />
     </View>

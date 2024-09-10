@@ -13,13 +13,14 @@ import { styling } from "./styles";
 
 export type CircleButtonPropsType = {
   radius: number;
+  pressed: boolean;
 };
 
-export const CircleButton = ({ radius }: CircleButtonPropsType) => {
+export const CircleButton = ({ radius, pressed }: CircleButtonPropsType) => {
   const diameter = radius * 2;
   const styles = styling(diameter, diameter);
   const {
-    LinearGradient: gradient,
+    LinearGradient: { whenPressed, whenNotPressed },
     Shadow: shadow,
     Plus: plus,
   } = COLORS.TabBar.TabBarItems.CircleButton;
@@ -30,7 +31,11 @@ export const CircleButton = ({ radius }: CircleButtonPropsType) => {
         <LinearGradient
           start={vec(0, 0)}
           end={vec(diameter, diameter)}
-          colors={[gradient["0%"], gradient["100%"]]}
+          colors={
+            pressed
+              ? [whenPressed["0%"], whenPressed["100%"]]
+              : [whenNotPressed["0%"], whenNotPressed["100%"]]
+          }
         />
         <Shadow
           dx={1}

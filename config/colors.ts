@@ -47,8 +47,14 @@ export const COLORS = {
       },
       CircleButton: {
         LinearGradient: {
-          "0%": "#f5f5f9",
-          "100%": "#dadfe7",
+          whenPressed: {
+            "0%": "#bbbfc7",
+            "100%": "#ffffff",
+          },
+          whenNotPressed: {
+            "0%": "#f5f5f9",
+            "100%": "#dadfe7",
+          },
         },
         Shadow: {
           blur: 0.5,
