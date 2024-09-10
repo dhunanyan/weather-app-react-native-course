@@ -1,24 +1,26 @@
 import * as React from "react";
-import {
-  Image,
-  ImageBackground,
-  Platform,
-  StyleSheet,
-  useWindowDimensions,
-} from "react-native";
+import { Image, ImageBackground, Platform, View } from "react-native";
 import { Canvas, LinearGradient, Rect, vec } from "@shopify/react-native-skia";
+
+import { useApplicationDimensions } from "@hooks";
 import { COLORS, IMAGES } from "@config";
+import { styling } from "./styles";
 
 export const HomeBackground = () => {
-  const { width, height } = useWindowDimensions();
+  const dimensions = useApplicationDimensions();
+  const { width, height } = dimensions;
+  const smokeHeight = height * 0.6;
+  const smokeOffset = height * 0.4;
+  const styles = styling(dimensions, smokeHeight, smokeOffset);
+
   const {
-    Home: { BackgroundGradient },
+    Home: { BackgroundGradient, SmokeGradient },
   } = COLORS;
 
   return (
-    <>
+    <View style={styles.container}>
       {Platform.OS !== "web" && (
-        <Canvas style={{ flex: 1 }}>
+        <Canvas style={styles.backgroundCanvas}>
           <Rect x={0} y={0} width={width} height={height}>
             <LinearGradient
               start={vec(0, 0)}
@@ -32,14 +34,26 @@ export const HomeBackground = () => {
       <ImageBackground
         source={IMAGES.home.background}
         resizeMode="cover"
-        style={{ height: "100%", position: "relative" }}
+        style={styles.imageBackground}
       >
+        {Platform.OS !== "web" && (
+          <Canvas style={styles.smokeCanvas}>
+            <Rect x={0} y={0} width={width} height={height}>
+              <LinearGradient
+                start={vec(width / 2, 0)}
+                end={vec(width / 2, smokeHeight)}
+                colors={[SmokeGradient["0%"], SmokeGradient["100%"]]}
+                positions={[0.02, 0.54]}
+              />
+            </Rect>
+          </Canvas>
+        )}
         <Image
           source={IMAGES.home.house}
-          resizeMode="contain"
-          style={{ width, height, ...StyleSheet.absoluteFillObject, top: 304 }}
+          resizeMode="cover"
+          style={styles.image}
         />
       </ImageBackground>
-    </>
+    </View>
   );
 };

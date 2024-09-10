@@ -1,0 +1,1 @@
+export { ArcComponent } from "./ArcComponent";
