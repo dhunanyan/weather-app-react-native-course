@@ -7,30 +7,25 @@ import "react-native-reanimated";
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [loaded] = useFonts({
-    SFProRegular: require("@assets/fonts/SF-Pro-Display-Regular.otf"),
-    SFProSemibold: require("@assets/fonts/SF-Pro-Display-Semibold.otf"),
-    SFProThin: require("@assets/fonts/SF-Pro-Display-Thin.otf"),
+  const [fontsLoaded] = useFonts({
+    "SF-Regular": require("@assets/fonts/SF-Pro-Display-Regular.otf"),
+    "SF-Semibold": require("@assets/fonts/SF-Pro-Display-Semibold.otf"),
+    "SF-Thin": require("@assets/fonts/SF-Pro-Display-Thin.otf"),
   });
 
   React.useEffect(() => {
-    if (loaded) {
+    if (fontsLoaded) {
       SplashScreen.hideAsync();
     }
-  }, [loaded]);
+  }, [fontsLoaded]);
 
-  if (!loaded) {
+  if (!fontsLoaded) {
     return null;
   }
 
   return (
     <Stack>
-      <Stack.Screen
-        name="(tabs)"
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="+not-found" />
     </Stack>
   );
