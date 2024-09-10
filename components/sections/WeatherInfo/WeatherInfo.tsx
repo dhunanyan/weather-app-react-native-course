@@ -4,7 +4,8 @@ import { Text, View } from "react-native";
 import { Weather } from "@models";
 import { DEGREE_SYMBOL } from "@utils";
 
-import { styles } from "./styles";
+import { styling } from "./styles";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type WeatherInfoPropsType = {
   weather: Weather;
@@ -12,6 +13,12 @@ type WeatherInfoPropsType = {
 
 export const WeatherInfo = ({ weather }: WeatherInfoPropsType) => {
   const { city, temperature, condition, high, low } = weather;
+  // STATUSBAR OFFSET
+  const { top: statusBarOffset } = useSafeAreaInsets();
+  const weatherInfoMargin = statusBarOffset + 51;
+
+  const styles = styling(weatherInfoMargin);
+
   return (
     <View style={styles.container}>
       <Text style={styles.cityText}>{city}</Text>

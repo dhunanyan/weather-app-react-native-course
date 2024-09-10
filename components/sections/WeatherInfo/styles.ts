@@ -1,9 +1,12 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
-  container: {},
-  cityText: {},
-  temperature: {},
-  condition: {},
-  minMaxText: {},
-});
+export const styling = (weatherInfoMargin: number) =>
+  StyleSheet.create({
+    container: {
+      marginTop: weatherInfoMargin,
+    },
+    cityText: {},
+    temperature: {},
+    condition: {},
+    minMaxText: {},
+  });
