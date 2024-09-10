@@ -45,6 +45,22 @@ export const COLORS = {
           color: "rgba(117, 130, 244, 0.5)",
         },
       },
+      CircleButton: {
+        LinearGradient: {
+          "0%": "#f5f5f9",
+          "100%": "#dadfe7",
+        },
+        Shadow: {
+          blur: 0.5,
+          color: "white",
+        },
+        Plus: {
+          style: "stroke" as "stroke",
+          strokeCap: "round" as "round",
+          strokeWidth: 4,
+          color: "#48319d",
+        },
+      },
     },
   },
 };

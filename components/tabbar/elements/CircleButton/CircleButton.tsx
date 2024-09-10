@@ -1,12 +1,15 @@
 import * as React from "react";
-
 import {
   Canvas,
   Circle,
+  Line,
   LinearGradient,
   Shadow,
   vec,
 } from "@shopify/react-native-skia";
+
+import { COLORS } from "@config";
+import { styling } from "./styles";
 
 export type CircleButtonPropsType = {
   radius: number;
@@ -14,18 +17,47 @@ export type CircleButtonPropsType = {
 
 export const CircleButton = ({ radius }: CircleButtonPropsType) => {
   const diameter = radius * 2;
-  //TODO: MAKE VARS OUT OF MAGIC NUMBERS AND COLOR CODES
+  const styles = styling(diameter, diameter);
+  const {
+    LinearGradient: gradient,
+    Shadow: shadow,
+    Plus: plus,
+  } = COLORS.TabBar.TabBarItems.CircleButton;
 
   return (
-    <Canvas style={{ width: diameter, height: diameter }}>
+    <Canvas style={styles.container}>
       <Circle cx={radius} cy={radius} r={radius}>
         <LinearGradient
           start={vec(0, 0)}
           end={vec(diameter, diameter)}
-          colors={["#f5f5f9", "#dadfe7"]}
+          colors={[gradient["0%"], gradient["100%"]]}
         />
-        <Shadow dx={1} dy={1} blur={0.5} color={"white"} inner />
+        <Shadow
+          dx={1}
+          dy={1}
+          blur={shadow["blur"]}
+          color={shadow["color"]}
+          inner
+        />
       </Circle>
+
+      <Line
+        p1={vec(radius - radius / 3, radius)}
+        p2={vec(radius + radius / 3, radius)}
+        style={plus["style"]}
+        strokeCap={plus["strokeCap"]}
+        strokeWidth={plus["strokeWidth"]}
+        color={plus["color"]}
+      />
+
+      <Line
+        p1={vec(radius, radius - radius / 3)}
+        p2={vec(radius, radius + radius / 3)}
+        style={plus["style"]}
+        strokeCap={plus["strokeCap"]}
+        strokeWidth={plus["strokeWidth"]}
+        color={plus["color"]}
+      />
     </Canvas>
   );
 };
