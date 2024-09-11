@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View } from "react-native";
+import { BlurView } from "expo-blur";
 
 import { useApplicationDimensions } from "@hooks";
 import { ArcComponent, TabBarItems } from "../elements";
@@ -14,9 +14,9 @@ export const WeatherTabBar = () => {
   const styles = styling(dimensions, tabBarHeight);
 
   return (
-    <View style={styles.container}>
+    <BlurView intensity={50} tint={"dark"} style={styles.container}>
       <ArcComponent height={tabBarHeight} width={width} />
       <TabBarItems />
-    </View>
+    </BlurView>
   );
 };

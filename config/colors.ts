@@ -75,4 +75,19 @@ export const COLORS = {
       minMaxTextColor: "rgba(255, 255, 255, 1)",
     },
   },
+  ForecastSheet: {
+    BackgroundGradient: {
+      "0%": "rgba(46, 51, 90, 0.26)",
+      "100%": "rgba(28, 57, 51, 0.26)",
+    },
+    LinePath: {
+      style: "stroke" as "stroke",
+      strokeWidth: 2,
+      color: "#dddddd",
+    },
+    LinePathGradient: {
+      "0%": "#dddddd",
+      "100%": "transparent",
+    },
+  },
 };

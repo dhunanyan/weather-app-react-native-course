@@ -28,7 +28,7 @@ export const WeatherInfo = ({ weather }: WeatherInfoPropsType) => {
       </Text>
       <Text style={styles.condition}>{condition}</Text>
       <Text style={styles.minMaxText}>
-        H: {high} {DEGREE_SYMBOL}L :{low}
+        {`H: ${high}${DEGREE_SYMBOL} L :${low} ${DEGREE_SYMBOL}`}
       </Text>
     </View>
   );
