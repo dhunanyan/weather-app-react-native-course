@@ -89,5 +89,23 @@ export const COLORS = {
       "0%": "#dddddd",
       "100%": "transparent",
     },
+    Separator: {
+      Line: {
+        color: "rgba(255, 255, 255, 0.3)",
+      },
+      Shadow: {
+        blur: 0,
+        color: "rgba(0, 0, 0, 0.2)",
+      },
+    },
+    ForecastControl: {
+      Line: {
+        strokeWidth: 3,
+      },
+      LinearGradient: {
+        "0%": "rgba(147, 112, 117, 0)",
+        "100%": "rgba(147, 112, 117, 1)",
+      },
+    },
   },
 };

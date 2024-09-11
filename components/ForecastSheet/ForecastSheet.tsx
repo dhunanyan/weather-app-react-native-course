@@ -4,6 +4,7 @@ import { useApplicationDimensions } from "@hooks";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { ForecastSheetBackground } from "./ForecastSheetBackground";
 import { ForecastControl } from "./ForecastControl";
+import { Separator } from "./Separator";
 
 import { styles } from "./styles";
 
@@ -27,6 +28,7 @@ export const ForecastSheet = () => {
     >
       <>
         <ForecastControl />
+        <Separator width={width} height={3} />
       </>
     </BottomSheet>
   );
