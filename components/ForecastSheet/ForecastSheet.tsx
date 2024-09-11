@@ -1,9 +1,11 @@
-import BottomSheet from "@gorhom/bottom-sheet";
 import * as React from "react";
-import { View } from "react-native";
-import { styles } from "./styles";
-import { ForecastSheetBackground } from "../../ForecastSheetBackground";
 import { useApplicationDimensions } from "@hooks";
+
+import BottomSheet from "@gorhom/bottom-sheet";
+import { ForecastSheetBackground } from "./ForecastSheetBackground";
+import { ForecastControl } from "./ForecastControl";
+
+import { styles } from "./styles";
 
 export const ForecastSheet = () => {
   const { width, height } = useApplicationDimensions();
@@ -22,6 +24,10 @@ export const ForecastSheet = () => {
           cornerRadius={cornerRadius}
         />
       )}
-    ></BottomSheet>
+    >
+      <>
+        <ForecastControl />
+      </>
+    </BottomSheet>
   );
 };

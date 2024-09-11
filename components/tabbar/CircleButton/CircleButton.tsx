@@ -2,11 +2,11 @@ import * as React from "react";
 import {
   Canvas,
   Circle,
-  Line,
   LinearGradient,
   Shadow,
   vec,
 } from "@shopify/react-native-skia";
+import { PlusIcon } from "../icons";
 
 import { COLORS } from "@config";
 import { styling } from "./styles";
@@ -22,7 +22,6 @@ export const CircleButton = ({ radius, pressed }: CircleButtonPropsType) => {
   const {
     LinearGradient: { whenPressed, whenNotPressed },
     Shadow: shadow,
-    Plus: plus,
   } = COLORS.TabBar.TabBarItems.CircleButton;
 
   return (
@@ -46,23 +45,7 @@ export const CircleButton = ({ radius, pressed }: CircleButtonPropsType) => {
         />
       </Circle>
 
-      <Line
-        p1={vec(radius - radius / 3, radius)}
-        p2={vec(radius + radius / 3, radius)}
-        style={plus["style"]}
-        strokeCap={plus["strokeCap"]}
-        strokeWidth={plus["strokeWidth"]}
-        color={plus["color"]}
-      />
-
-      <Line
-        p1={vec(radius, radius - radius / 3)}
-        p2={vec(radius, radius + radius / 3)}
-        style={plus["style"]}
-        strokeCap={plus["strokeCap"]}
-        strokeWidth={plus["strokeWidth"]}
-        color={plus["color"]}
-      />
+      <PlusIcon radius={radius} />
     </Canvas>
   );
 };

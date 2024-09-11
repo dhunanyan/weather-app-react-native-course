@@ -1,1 +1,0 @@
-export { WeatherTabBar } from "./WeatherTabBar";

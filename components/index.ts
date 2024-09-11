@@ -1,4 +1,4 @@
 export { HomeBackground } from "./HomeBackground";
-export { WeatherInfo } from "./sections";
-export { ForecastSheet } from "./sheets";
-export { WeatherTabBar } from "./tabbar";
+export { WeatherInfo } from "./WeatherInfo";
+export { ForecastSheet } from "./ForecastSheet";
+export { TabBar } from "./TabBar";

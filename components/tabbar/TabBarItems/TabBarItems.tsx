@@ -3,7 +3,7 @@ import { Pressable, View } from "react-native";
 
 import { useApplicationDimensions } from "@hooks";
 
-import { ListIcon, MapIcon } from "../../icons";
+import { ListIcon, MapIcon } from "../icons";
 import { TrapezoidBackground } from "../TrapezoidBackground";
 import { CircleButton } from "../CircleButton";
 
