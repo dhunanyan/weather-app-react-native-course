@@ -4,18 +4,17 @@ import { ScrollView } from "react-native-gesture-handler";
 import { ForecastCapsule } from "../ForecastCapsule";
 
 import { Forecast } from "@models";
-import { hourly } from "@data";
 import { styles } from "./styles";
 
 export type ForecastScrollPropsType = {
-  forecastHourlyList: Forecast[];
+  forecastList: Forecast[];
   capsuleWidth: number;
   capsuleHeight: number;
   capsuleRadius: number;
 };
 
 export const ForecastScroll = ({
-  forecastHourlyList,
+  forecastList,
   capsuleWidth,
   capsuleHeight,
   capsuleRadius,
@@ -27,7 +26,7 @@ export const ForecastScroll = ({
       showsHorizontalScrollIndicator={false}
     >
       <View style={styles.view}>
-        {forecastHourlyList.map((forecast, index) => (
+        {forecastList.map((forecast, index) => (
           <ForecastCapsule
             key={index}
             width={capsuleWidth}

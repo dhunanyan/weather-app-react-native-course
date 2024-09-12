@@ -103,8 +103,8 @@ export const COLORS = {
         strokeWidth: 3,
       },
       LinearGradient: {
-        "0%": "rgba(147, 112, 117, 0)",
-        "100%": "rgba(147, 112, 117, 1)",
+        "0%": "rgba(167, 132, 137, 0)",
+        "100%": "rgba(167, 132, 137, 1)",
       },
     },
     ForecastCapsule: {

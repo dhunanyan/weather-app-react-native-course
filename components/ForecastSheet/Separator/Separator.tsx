@@ -18,7 +18,7 @@ export const Separator = ({ width, height }: SeparatorPropsType) => {
         p1={vec(0, 0)}
         p2={vec(width, 0)}
         color={line["color"]}
-        strokeWidth={height}
+        strokeWidth={1}
       />
       <Shadow dx={0} dy={0} blur={shadow["blur"]} color={shadow["color"]} />
     </Canvas>

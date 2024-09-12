@@ -7,10 +7,15 @@ import { ForecastControl } from "./ForecastControl";
 import { ForecastScroll } from "./ForecastScroll";
 import { Separator } from "./Separator";
 
+import { ForecastType } from "@models";
+import { hourly, weekly } from "@data";
+
 import { styles } from "./styles";
-import { hourly } from "@data";
 
 export const ForecastSheet = () => {
+  const [selectedForecastType, selectForecastType] =
+    React.useState<ForecastType>(ForecastType.Hourly);
+
   const { width, height } = useApplicationDimensions();
   const snapPoints = ["38.5%", "83%"];
   const firstSnapPoint = height * (parseFloat(snapPoints[0]) / 100);
@@ -33,10 +38,17 @@ export const ForecastSheet = () => {
       )}
     >
       <>
-        <ForecastControl />
+        <ForecastControl
+          width={width}
+          selectedForecastType={selectedForecastType}
+          selectForecastType={selectForecastType}
+        />
         <Separator width={width} height={3} />
         <ForecastScroll
-          forecastHourlyList={hourly}
+          forecastList={
+            // selectedForecastType === ForecastType.Hourly ? hourly : weekly
+            hourly
+          }
           capsuleRadius={capsuleRadius}
           capsuleHeight={capsuleHeight}
           capsuleWidth={capsuleWidth}
