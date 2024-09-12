@@ -5,7 +5,7 @@ export const styling = (width: number, height: number) =>
     container: {
       position: "relative",
       width,
-      minHeight: height,
+      height,
     },
     canvas: {
       ...StyleSheet.absoluteFillObject,
@@ -13,6 +13,7 @@ export const styling = (width: number, height: number) =>
     },
     content: {
       width,
+      height,
       flex: 1,
       alignItems: "center",
       justifyContent: "space-between",

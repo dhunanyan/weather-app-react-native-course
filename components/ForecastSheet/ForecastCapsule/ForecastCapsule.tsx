@@ -27,6 +27,7 @@ export const ForecastCapsule = ({
 }: ForecastCapsulePropsType) => {
   const { date, icon, probability, temperature } = forecast;
   const timeToDisplay = convertDateTo12HrFormat(date);
+  const isActive = timeToDisplay.toLowerCase() === "now";
 
   const styles = styling(width, height);
   const {
@@ -44,7 +45,7 @@ export const ForecastCapsule = ({
           width={width}
           height={height}
           r={radius}
-          color={roundedRect["color"]}
+          color={isActive ? roundedRect["activeColor"] : roundedRect["color"]}
         >
           <Shadow
             dx={1}
@@ -67,7 +68,9 @@ export const ForecastCapsule = ({
         <Text style={styles.time}>{timeToDisplay.toString()}</Text>
         <View style={styles.probabilityContainer}>
           <Image source={icon} style={styles.image} />
-          <Text style={styles.probability}>
+          <Text
+            style={[styles.probability, { opacity: probability > 0 ? 1 : 0 }]}
+          >
             {probability}
             {PROBABILITY_SYMBOL}
           </Text>

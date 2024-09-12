@@ -4,10 +4,10 @@ import { useApplicationDimensions } from "@hooks";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { ForecastSheetBackground } from "./ForecastSheetBackground";
 import { ForecastControl } from "./ForecastControl";
+import { ForecastScroll } from "./ForecastScroll";
 import { Separator } from "./Separator";
 
 import { styles } from "./styles";
-import { ForecastCapsule } from "./ForecastCapsule";
 import { hourly } from "@data";
 
 export const ForecastSheet = () => {
@@ -35,11 +35,11 @@ export const ForecastSheet = () => {
       <>
         <ForecastControl />
         <Separator width={width} height={3} />
-        <ForecastCapsule
-          width={capsuleWidth}
-          height={capsuleHeight}
-          radius={capsuleRadius}
-          forecast={hourly[0]}
+        <ForecastScroll
+          forecastHourlyList={hourly}
+          capsuleRadius={capsuleRadius}
+          capsuleHeight={capsuleHeight}
+          capsuleWidth={capsuleWidth}
         />
       </>
     </BottomSheet>
