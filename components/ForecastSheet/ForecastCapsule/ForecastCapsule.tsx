@@ -1,9 +1,14 @@
 import * as React from "react";
-import { View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { Canvas, RoundedRect, Shadow } from "@shopify/react-native-skia";
 
 import { Forecast as ForecastModel } from "@models";
 import { COLORS } from "@config";
+import {
+  convertDateTo12HrFormat,
+  DEGREE_SYMBOL,
+  PROBABILITY_SYMBOL,
+} from "@utils";
 
 import { styling } from "./styles";
 
@@ -20,12 +25,16 @@ export const ForecastCapsule = ({
   height,
   radius,
 }: ForecastCapsulePropsType) => {
+  const { date, icon, probability, temperature } = forecast;
+  const timeToDisplay = convertDateTo12HrFormat(date);
+
   const styles = styling(width, height);
   const {
     RoundedRect: roundedRect,
     Shadow1: shadow1,
     Shadow2: shadow2,
   } = COLORS.ForecastSheet.ForecastCapsule;
+
   return (
     <View style={styles.container}>
       <Canvas style={styles.canvas}>
@@ -53,6 +62,21 @@ export const ForecastCapsule = ({
           />
         </RoundedRect>
       </Canvas>
+
+      <View style={styles.content}>
+        <Text style={styles.time}>{timeToDisplay.toString()}</Text>
+        <View style={styles.probabilityContainer}>
+          <Image source={icon} style={styles.image} />
+          <Text style={styles.probability}>
+            {probability}
+            {PROBABILITY_SYMBOL}
+          </Text>
+        </View>
+        <Text style={styles.temperature}>
+          {temperature}
+          {DEGREE_SYMBOL}
+        </Text>
+      </View>
     </View>
   );
 };
