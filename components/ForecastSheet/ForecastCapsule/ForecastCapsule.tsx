@@ -2,10 +2,10 @@ import * as React from "react";
 import { Image, Text, View } from "react-native";
 import { Canvas, RoundedRect, Shadow } from "@shopify/react-native-skia";
 
-import { Forecast as ForecastModel } from "@models";
+import { Forecast as ForecastModel, ForecastType } from "@models";
 import { COLORS } from "@config";
 import {
-  convertDateTo12HrFormat,
+  getCurrentDisplayText,
   DEGREE_SYMBOL,
   PROBABILITY_SYMBOL,
 } from "@utils";
@@ -25,9 +25,8 @@ export const ForecastCapsule = ({
   height,
   radius,
 }: ForecastCapsulePropsType) => {
-  const { date, icon, probability, temperature } = forecast;
-  const timeToDisplay = convertDateTo12HrFormat(date);
-  const isActive = timeToDisplay.toLowerCase() === "now";
+  const { date, icon, probability, temperature, type } = forecast;
+  const [textToDisplay, isActive] = getCurrentDisplayText(type, date);
 
   const styles = styling(width, height);
   const {
@@ -65,7 +64,7 @@ export const ForecastCapsule = ({
       </Canvas>
 
       <View style={styles.content}>
-        <Text style={styles.time}>{timeToDisplay.toString()}</Text>
+        <Text style={styles.time}>{textToDisplay}</Text>
         <View style={styles.probabilityContainer}>
           <Image source={icon} style={styles.image} />
           <Text

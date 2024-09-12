@@ -46,8 +46,7 @@ export const ForecastSheet = () => {
         <Separator width={width} height={3} />
         <ForecastScroll
           forecastList={
-            // selectedForecastType === ForecastType.Hourly ? hourly : weekly
-            hourly
+            selectedForecastType === ForecastType.Hourly ? hourly : weekly
           }
           capsuleRadius={capsuleRadius}
           capsuleHeight={capsuleHeight}

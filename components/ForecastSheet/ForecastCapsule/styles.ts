@@ -21,21 +21,26 @@ export const styling = (width: number, height: number) =>
       paddingVertical: 19,
     },
     time: {
+      width,
       fontFamily: "SF-Semibold",
       fontSize: 15,
       lineHeight: 20,
       color: "white",
       letterSpacing: 0.5,
+      textAlign: "center",
     },
     probabilityContainer: {
+      width,
       paddingTop: 10,
       paddingBottom: 12,
     },
     image: {
       width: width / 2,
       height: width / 2,
+      alignSelf: "center",
     },
     probability: {
+      width,
       fontFamily: "SF-Semibold",
       fontSize: 13,
       lineHeight: 14,
@@ -43,10 +48,12 @@ export const styling = (width: number, height: number) =>
       textAlign: "center",
     },
     temperature: {
+      width: width,
       fontFamily: "SF-Semibold",
       fontSize: 20,
       lineHeight: 24,
       color: "white",
       letterSpacing: 0.38,
+      textAlign: "center",
     },
   });
