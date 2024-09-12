@@ -8,7 +8,7 @@ import {
   WeatherInfo,
   TabBar,
 } from "@components";
-import { currentWeather } from "@data";
+import { currentWeatherData } from "@data";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { styles } from "./styles";
@@ -18,7 +18,7 @@ export const Home = () => {
     <SafeAreaProvider>
       <GestureHandlerRootView style={styles.gestureHandlerRootView}>
         <HomeBackground />
-        <WeatherInfo weather={currentWeather} />
+        <WeatherInfo weather={currentWeatherData} />
         <ForecastSheet />
         <TabBar />
         <StatusBar style="light" />

@@ -7,12 +7,18 @@ import { ForecastControl } from "./ForecastControl";
 import { Separator } from "./Separator";
 
 import { styles } from "./styles";
+import { ForecastCapsule } from "./ForecastCapsule";
+import { hourly } from "@data";
 
 export const ForecastSheet = () => {
   const { width, height } = useApplicationDimensions();
   const snapPoints = ["38.5%", "83%"];
   const firstSnapPoint = height * (parseFloat(snapPoints[0]) / 100);
   const cornerRadius = 44;
+
+  const capsuleRadius = 30;
+  const capsuleHeight = height * 0.17;
+  const capsuleWidth = width * 0.15;
 
   return (
     <BottomSheet
@@ -29,6 +35,12 @@ export const ForecastSheet = () => {
       <>
         <ForecastControl />
         <Separator width={width} height={3} />
+        <ForecastCapsule
+          width={capsuleWidth}
+          height={capsuleHeight}
+          radius={capsuleRadius}
+          forecast={hourly[0]}
+        />
       </>
     </BottomSheet>
   );

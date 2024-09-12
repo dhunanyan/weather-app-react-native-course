@@ -1,6 +1,6 @@
 import { Weather } from "@models";
 
-export const currentWeather: Weather = {
+export const currentWeatherData: Weather = {
   city: "Montreal",
   temperature: 19,
   condition: "Mostly Clear",

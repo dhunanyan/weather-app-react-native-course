@@ -1,1 +1,2 @@
-export { currentWeather } from "./currentWeather";
+export { currentWeatherData } from "./currentWeatherData";
+export { hourly, weekly, forecastList } from "./forecastWeatherData";

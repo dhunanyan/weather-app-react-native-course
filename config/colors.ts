@@ -107,5 +107,18 @@ export const COLORS = {
         "100%": "rgba(147, 112, 117, 1)",
       },
     },
+    ForecastCapsule: {
+      RoundedRect: {
+        color: "rgba(72, 49, 157, 1)",
+      },
+      Shadow1: {
+        blur: 0,
+        color: "rgba(255, 255, 255, 0.25)",
+      },
+      Shadow2: {
+        blur: 0,
+        color: "rgba(0, 0, 0, 0.075)",
+      },
+    },
   },
 };
