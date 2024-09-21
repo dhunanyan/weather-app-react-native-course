@@ -15,7 +15,7 @@ import { WidgetDimensionsProps } from "../Widget/Widget";
 export const AirQualityWidget = ({ width, height }: WidgetDimensionsProps) => {
   return (
     <>
-      <Widget width={"100%"} height={height}>
+      <Widget width={width} height={height}>
         <Widget.Header
           Icon={Entypo}
           iconProps={{ name: "air" }}

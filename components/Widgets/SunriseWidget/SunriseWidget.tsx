@@ -79,7 +79,6 @@ export const SunriseWidget = ({ width, height }: WidgetDimensionsProps) => {
           <Canvas
             style={{
               ...StyleSheet.absoluteFillObject,
-
               width: 16,
               height: 16,
               top: height / 3,
