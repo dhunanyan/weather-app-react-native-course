@@ -1,23 +1,46 @@
 import * as React from "react";
+import { StyleSheet } from "react-native";
 import { BlurView } from "expo-blur";
-
-import { useApplicationDimensions } from "@hooks";
+import Animated, {
+  interpolate,
+  useAnimatedStyle,
+} from "react-native-reanimated";
 import { TabBarItems } from "./TabBarItems";
 import { ArcComponent } from "./ArcComponent";
+
+import { useApplicationDimensions } from "@hooks";
+import { useForecastSheetPosition } from "@context";
+import { Extrapolate } from "@shopify/react-native-skia";
 
 import { styling } from "./styles";
 
 export const TabBar = () => {
   const tabBarHeight = 88;
   const dimensions = useApplicationDimensions();
-  const { width } = dimensions;
+  const { width, height } = dimensions;
 
   const styles = styling(dimensions, tabBarHeight);
 
+  const animatedPosition = useForecastSheetPosition();
+  const animatedViewStyles = useAnimatedStyle(() => ({
+    transform: [
+      {
+        translateY: interpolate(
+          animatedPosition.value,
+          [0, 1],
+          [0, tabBarHeight + 20],
+          Extrapolate.CLAMP
+        ),
+      },
+    ],
+  }));
+
   return (
-    <BlurView intensity={50} tint={"dark"} style={styles.container}>
-      <ArcComponent height={tabBarHeight} width={width} />
-      <TabBarItems />
-    </BlurView>
+    <Animated.View style={[styles.container, animatedViewStyles]}>
+      <BlurView intensity={50} tint={"dark"} style={styles.blurView}>
+        <ArcComponent height={tabBarHeight} width={width} />
+        <TabBarItems />
+      </BlurView>
+    </Animated.View>
   );
 };

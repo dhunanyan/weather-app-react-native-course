@@ -7,4 +7,8 @@ export const styling = ({ height }: ScaledSize, tabBarHeight: number) =>
       ...StyleSheet.absoluteFillObject,
       top: height - tabBarHeight,
     },
+    blurView: {
+      height: tabBarHeight,
+      ...StyleSheet.absoluteFillObject,
+    },
   });
