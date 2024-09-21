@@ -10,7 +10,7 @@ export const styling = (
       ...StyleSheet.absoluteFillObject,
     },
     backgroundCanvas: {
-      flex: 1,
+      ...StyleSheet.absoluteFillObject,
     },
     imageBackground: {
       height: "100%",

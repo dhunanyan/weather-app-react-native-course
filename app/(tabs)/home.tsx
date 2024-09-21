@@ -4,7 +4,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
 
-import { HomeScreen } from "@screens";
+import { HomeScreen, BasicAnimations } from "@screens";
 export default function Home() {
   return (
     <SafeAreaProvider>
