@@ -1,0 +1,1 @@
+export { HumidityWidget } from "./HumidityWidget";
