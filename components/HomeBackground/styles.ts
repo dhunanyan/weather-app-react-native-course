@@ -9,9 +9,6 @@ export const styling = (
     container: {
       ...StyleSheet.absoluteFillObject,
     },
-    backgroundCanvas: {
-      ...StyleSheet.absoluteFillObject,
-    },
     imageBackground: {
       height: "100%",
     },

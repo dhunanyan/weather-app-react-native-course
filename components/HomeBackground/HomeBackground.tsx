@@ -14,6 +14,7 @@ import { useApplicationDimensions } from "@hooks";
 import { COLORS, IMAGES, PLATFORMS } from "@config";
 
 import { styling } from "./styles";
+import { BackgroundGradient } from "../BackgroundGradient";
 
 export const HomeBackground = () => {
   const dimensions = useApplicationDimensions();
@@ -74,16 +75,7 @@ export const HomeBackground = () => {
 
   return (
     <View style={styles.container}>
-      <Canvas style={styles.backgroundCanvas}>
-        <Rect x={0} y={0} width={width} height={height}>
-          <LinearGradient
-            start={vec(0, 0)}
-            end={vec(width, height)}
-            colors={backgroundColors}
-          />
-        </Rect>
-      </Canvas>
-
+      <BackgroundGradient colors={backgroundColors} />
       <AnimatedImageBackground
         source={IMAGES.home.background}
         resizeMode="cover"
