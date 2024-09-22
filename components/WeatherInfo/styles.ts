@@ -16,13 +16,28 @@ export const styling = (weatherInfoMargin: number) => {
       lineHeight: 41,
       color: cityTextColor,
     },
-    temperature: {
+    tempConditionView: {
+      alignItems: "center",
+      marginTop: 10,
+    },
+    tempSeparatorView: {
+      flexDirection: "row",
+    },
+    temperatureText: {
       fontFamily: "SF-Thin",
       fontSize: 96,
       lineHeight: 96,
       color: temperatureColor,
     },
-    condition: {
+    separatorText: {
+      fontFamily: "SF-Semibold",
+      fontSize: 20,
+      lineHeight: 20,
+      color: conditionColor,
+      marginHorizontal: 0,
+      display: "none",
+    },
+    conditionText: {
       fontFamily: "SF-Semibold",
       fontSize: 20,
       lineHeight: 20,

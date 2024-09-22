@@ -2,13 +2,9 @@ import * as React from "react";
 import { Image, Text, View } from "react-native";
 import { Canvas, RoundedRect, Shadow } from "@shopify/react-native-skia";
 
-import { Forecast as ForecastModel, ForecastType } from "@models";
-import { COLORS } from "@config";
-import {
-  getCurrentDisplayText,
-  DEGREE_SYMBOL,
-  PROBABILITY_SYMBOL,
-} from "@utils";
+import { Forecast as ForecastModel } from "@models";
+import { getCurrentDisplayText } from "@utils";
+import { COLORS, DEGREE_SYMBOL, PROBABILITY_SYMBOL } from "@config";
 
 import { styling } from "./styles";
 

@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 import { Widget } from "../Widget";
-import { DEGREE_SYMBOL } from "@utils";
+import { DEGREE_SYMBOL } from "@config";
 
 export type FeelsLikeWidgetPropsType = {
   width: number;

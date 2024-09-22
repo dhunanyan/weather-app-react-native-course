@@ -4,6 +4,7 @@ import { styles } from "./styles";
 import { Canvas, Line, LinearGradient, vec } from "@shopify/react-native-skia";
 import { COLORS } from "@config";
 import { ForecastType } from "@models";
+import { useSharedValue } from "react-native-reanimated";
 
 export type ForecastControlPropsType = {
   width: number;
@@ -39,6 +40,8 @@ export const ForecastControl = ({
     selectedForecastType === ForecastType.Hourly
       ? textHourlyWidth
       : width - spacingX * 2;
+
+  const segmentTranslateX = useSharedValue(0);
 
   return (
     <>
