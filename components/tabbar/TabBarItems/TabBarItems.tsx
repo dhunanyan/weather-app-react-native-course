@@ -8,13 +8,17 @@ import { TrapezoidBackground } from "../TrapezoidBackground";
 import { CircleButton } from "../CircleButton";
 
 import { styling } from "./styles";
+import { useNavigation } from "expo-router";
 
 export const TabBarItems = () => {
+  const navigation = useNavigation<AppNavigationProps>();
   const { width, height } = useApplicationDimensions();
+
   const trapezoidWidth = width * 0.68;
   const trapezoidHeight = height * 0.12;
   const circleRadius = (trapezoidHeight * 0.51) / 2;
   const buttonCenterX = width / 2 - circleRadius;
+
   const styles = styling(buttonCenterX, circleRadius);
 
   return (
@@ -27,7 +31,9 @@ export const TabBarItems = () => {
           <CircleButton radius={circleRadius} pressed={pressed} />
         )}
       </Pressable>
-      <ListIcon />
+      <Pressable onPress={() => navigation.navigate("list")}>
+        <ListIcon />
+      </Pressable>
     </View>
   );
 };

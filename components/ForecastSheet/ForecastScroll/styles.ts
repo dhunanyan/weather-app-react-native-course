@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   scrollView: {
-    paddingTop: 20,
+    paddingTop: 15,
     paddingBottom: 10,
   },
   view: {
