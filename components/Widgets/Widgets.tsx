@@ -21,7 +21,7 @@ export type WidgetsPropsType = {
 export const Widgets = ({ smallWidgetSize, parentWidth }: WidgetsPropsType) => {
   return (
     <View style={styles.widgetContainer}>
-      <AirQualityWidget width={parentWidth - 10 * 2} height={150} />
+      <AirQualityWidget width={parentWidth - 10 * 3} height={150} />
       <View style={styles.squareWidgetContainer}>
         <UvIndexWidget
           width={parentWidth / 2 - 10 * 2}

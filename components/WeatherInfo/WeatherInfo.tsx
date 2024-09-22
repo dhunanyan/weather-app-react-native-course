@@ -34,7 +34,7 @@ export const WeatherInfo = ({ weather }: WeatherInfoPropsType) => {
         translateY: interpolate(
           animatedPosition.value,
           [0, 1],
-          [0, -topMargin],
+          [0, -topMargin + 10],
           Extrapolate.CLAMP
         ),
       },

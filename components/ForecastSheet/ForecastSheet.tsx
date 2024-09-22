@@ -93,7 +93,7 @@ export const ForecastSheet = () => {
         <ForecastControl selectForecastType={selectForecastType} />
         <Separator width={width} height={3} />
         <ScrollView
-          contentContainerStyle={{ paddingBottom: 60 }}
+          contentContainerStyle={{ paddingBottom: 5 }}
           showsVerticalScrollIndicator={false}
         >
           <View style={styles.forecastScrollsView}>
