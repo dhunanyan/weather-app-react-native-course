@@ -2,13 +2,18 @@
   "name": "weather-app-course",
   "main": "expo-router/entry",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=20",
+    "yarn": ">=1.22.17"
+  },
   "scripts": {
     "dev": "expo start --port 8080",
     "dev:android": "expo start --android --port 8081",
     "dev:ios": "expo start --ios",
     "dev:web": "expo start --web",
     "reset-project": "node ./scripts/reset-project.js",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
@@ -38,6 +43,8 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~18.2.79",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.10",
     "typescript": "~5.3.3"
   },
   "private": true
