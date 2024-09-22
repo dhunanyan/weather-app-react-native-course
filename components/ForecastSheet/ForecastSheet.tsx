@@ -58,18 +58,13 @@ export const ForecastSheet = () => {
       animateOnMount={false}
       backgroundComponent={() => (
         <ForecastSheetBackground
-          width={width}
           height={firstSnapPoint}
           cornerRadius={cornerRadius}
         />
       )}
     >
       <>
-        <ForecastControl
-          width={width}
-          selectedForecastType={selectedForecastType}
-          selectForecastType={selectForecastType}
-        />
+        <ForecastControl selectForecastType={selectForecastType} />
         <Separator width={width} height={3} />
         <ScrollView
           contentContainerStyle={{ paddingBottom: 60 }}

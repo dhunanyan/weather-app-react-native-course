@@ -16,18 +16,19 @@ import { useForecastSheetPosition } from "@context";
 import { COLORS } from "@config";
 
 import { styles } from "./styles";
+import { useApplicationDimensions } from "@hooks";
 
 export type ForecastSheetBackgroundPropsType = {
-  width: number;
   height: number;
   cornerRadius: number;
 };
 
 export const ForecastSheetBackground = ({
-  width,
   height,
   cornerRadius,
 }: ForecastSheetBackgroundPropsType) => {
+  const { width } = useApplicationDimensions();
+
   const { BackgroundGradient, LinePath, LinePathGradient } =
     COLORS.ForecastSheet;
   const borderPath = `
