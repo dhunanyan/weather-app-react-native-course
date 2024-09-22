@@ -1,7 +1,7 @@
-import { COLORS } from "@config";
-import { useApplicationDimensions } from "@hooks";
-import { Canvas, Line, Shadow, vec } from "@shopify/react-native-skia";
 import * as React from "react";
+import { Canvas, Line, Shadow, vec } from "@shopify/react-native-skia";
+
+import { COLORS } from "@config";
 
 export type SeparatorPropsType = {
   width: number;
@@ -9,7 +9,6 @@ export type SeparatorPropsType = {
 };
 
 export const Separator = ({ width, height }: SeparatorPropsType) => {
-  const {} = useApplicationDimensions();
   const { Line: line, Shadow: shadow } = COLORS.ForecastSheet.Separator;
 
   return (

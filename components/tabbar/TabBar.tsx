@@ -1,5 +1,4 @@
 import * as React from "react";
-import { StyleSheet } from "react-native";
 import { BlurView } from "expo-blur";
 import Animated, {
   interpolate,
@@ -17,7 +16,7 @@ import { styling } from "./styles";
 export const TabBar = () => {
   const tabBarHeight = 88;
   const dimensions = useApplicationDimensions();
-  const { width, height } = dimensions;
+  const { width } = dimensions;
 
   const styles = styling(dimensions, tabBarHeight);
 

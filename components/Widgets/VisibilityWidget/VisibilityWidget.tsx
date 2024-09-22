@@ -1,7 +1,7 @@
-import React from "react";
+import * as React from "react";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import { Widget } from "../Widget";
+import { Widget, WidgetHeader, WidgetBody, WidgetFooter } from "../Widget";
 
 export type VisibilityWidgetPropsType = {
   width: number;
@@ -14,13 +14,13 @@ export const VisibilityWidget = ({
 }: VisibilityWidgetPropsType) => {
   return (
     <Widget width={width} height={height}>
-      <Widget.Header
+      <WidgetHeader
         contentText="Rainfall"
         Icon={MaterialIcons}
         iconProps={{ name: "visibility" }}
       />
-      <Widget.Body contentText="8 km" contentSize="Large"></Widget.Body>
-      <Widget.Footer contentText="Great visibility." />
+      <WidgetBody contentText="8 km" contentSize="Large" />
+      <WidgetFooter contentText="Great visibility." />
     </Widget>
   );
 };

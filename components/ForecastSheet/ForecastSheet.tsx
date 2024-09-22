@@ -62,7 +62,7 @@ export const ForecastSheet = () => {
       translateXHourly.value = withTiming(-width, { duration: 300 });
       translateXWeekly.value = withTiming(-width, { duration: 300 });
     }
-  }, [selectedForecastType]);
+  }, [selectedForecastType, translateXHourly, translateXWeekly, width]);
 
   const normalizePosition = (position: number) => {
     "worklet";

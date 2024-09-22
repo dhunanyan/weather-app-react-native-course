@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import {
   Canvas,
   Circle,
@@ -8,7 +8,7 @@ import {
   vec,
 } from "@shopify/react-native-skia";
 import { Feather } from "@expo/vector-icons";
-import { Widget } from "../Widget/Widget";
+import { Widget, WidgetHeader, WidgetBody } from "../Widget";
 
 export type UvIndexWidgetPropsType = {
   width: number;
@@ -19,12 +19,12 @@ export const UvIndexWidget = ({ width, height }: UvIndexWidgetPropsType) => {
   return (
     <>
       <Widget width={width} height={height}>
-        <Widget.Header
+        <WidgetHeader
           Icon={Feather}
           iconProps={{ name: "sun" }}
           contentText="UV INDEX"
         />
-        <Widget.Body
+        <WidgetBody
           contentText="4"
           contentSize="Large"
           subContentText="Moderate"
@@ -54,7 +54,7 @@ export const UvIndexWidget = ({ width, height }: UvIndexWidgetPropsType) => {
               <Paint color="black" style="stroke" strokeWidth={1} />
             </Circle>
           </Canvas>
-        </Widget.Body>
+        </WidgetBody>
       </Widget>
     </>
   );

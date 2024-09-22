@@ -1,6 +1,6 @@
-import React from "react";
+import * as React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Widget, WidgetDimensionsProps } from "../Widget/Widget";
+import { Widget, WidgetHeader, WidgetBody, WidgetFooter } from "../Widget";
 
 export type HumidityWidgetPropsType = {
   width: number;
@@ -10,13 +10,13 @@ export type HumidityWidgetPropsType = {
 export const HumidityWidget = ({ width, height }: HumidityWidgetPropsType) => {
   return (
     <Widget width={width} height={height}>
-      <Widget.Header
+      <WidgetHeader
         contentText="Humidity"
         Icon={MaterialCommunityIcons}
         iconProps={{ name: "water" }}
       />
-      <Widget.Body contentText="90%" contentSize="Large"></Widget.Body>
-      <Widget.Footer contentText="The dew point is 17 right now." />
+      <WidgetBody contentText="90%" contentSize="Large" />
+      <WidgetFooter contentText="The dew point is 17 right now." />
     </Widget>
   );
 };

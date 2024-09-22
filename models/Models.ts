@@ -131,10 +131,10 @@ export interface WeatherData {
 
 export interface TimeSeriesData {
   uom: string;
-  values: Array<{
+  values: {
     validTime: string;
     value: number | null;
-  }>;
+  }[];
 }
 
 export interface GridpointData {

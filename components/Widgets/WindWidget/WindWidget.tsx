@@ -1,8 +1,8 @@
-import React from "react";
+import * as React from "react";
 import { View } from "react-native";
 
 import { Feather, Fontisto } from "@expo/vector-icons";
-import { Widget } from "../Widget/Widget";
+import { Widget, WidgetHeader, WidgetBody } from "../Widget";
 
 export type WinWidgetPropsType = {
   width: number;
@@ -12,12 +12,12 @@ export type WinWidgetPropsType = {
 export const WindWidget = ({ width, height }: WinWidgetPropsType) => {
   return (
     <Widget width={width} height={height}>
-      <Widget.Header
+      <WidgetHeader
         contentText="Wind"
         Icon={Feather}
         iconProps={{ name: "wind" }}
       />
-      <Widget.Body>
+      <WidgetBody>
         <View
           style={{
             flex: 1,
@@ -27,7 +27,7 @@ export const WindWidget = ({ width, height }: WinWidgetPropsType) => {
         >
           <Fontisto name="compass-alt" size={100} color="white" />
         </View>
-      </Widget.Body>
+      </WidgetBody>
     </Widget>
   );
 };

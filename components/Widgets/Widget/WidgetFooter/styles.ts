@@ -2,9 +2,13 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    alignSelf: "center",
+    flexDirection: "row",
     justifyContent: "space-between",
-    marginHorizontal: "auto",
-    marginVertical: 5,
+  },
+  text: {
+    fontFamily: "SF-Regular",
+    fontSize: 18,
+    color: "white",
+    lineHeight: 18,
   },
 });

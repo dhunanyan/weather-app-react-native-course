@@ -27,7 +27,7 @@ export const BasicAnimations = () => {
   React.useEffect(() => {
     scale.value = withRepeat(withSpring(2), -1, true);
     borderRadius.value = withRepeat(withSpring(1), -1, true);
-  }, []);
+  }, [borderRadius, scale]);
 
   return (
     <View style={styles.container}>

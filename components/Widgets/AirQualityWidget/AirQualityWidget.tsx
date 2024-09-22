@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import {
   Canvas,
   Circle,
@@ -9,19 +9,26 @@ import {
 } from "@shopify/react-native-skia";
 import { AntDesign, Entypo } from "@expo/vector-icons";
 
-import { Widget } from "../Widget";
-import { WidgetDimensionsProps } from "../Widget/Widget";
+import { Widget, WidgetHeader, WidgetBody, WidgetFooter } from "../Widget";
 
-export const AirQualityWidget = ({ width, height }: WidgetDimensionsProps) => {
+export type AirQualityWidgetPropsType = {
+  width: number;
+  height: number;
+};
+
+export const AirQualityWidget = ({
+  width,
+  height,
+}: AirQualityWidgetPropsType) => {
   return (
     <>
       <Widget width={width} height={height}>
-        <Widget.Header
+        <WidgetHeader
           Icon={Entypo}
           iconProps={{ name: "air" }}
           contentText="AIR QUALITY"
         />
-        <Widget.Body contentText="3-Low Health Risk">
+        <WidgetBody contentText="3-Low Health Risk">
           <Canvas style={{ height: 10, marginTop: 10, flex: 1 }}>
             <Line
               p1={vec(0, 0)}
@@ -47,8 +54,8 @@ export const AirQualityWidget = ({ width, height }: WidgetDimensionsProps) => {
               <Paint color="black" style="stroke" strokeWidth={1} />
             </Circle>
           </Canvas>
-        </Widget.Body>
-        <Widget.Footer
+        </WidgetBody>
+        <WidgetFooter
           Icon={AntDesign}
           iconProps={{ name: "right" }}
           contentText="See More"

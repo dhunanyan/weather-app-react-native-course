@@ -1,10 +1,9 @@
-import React from "react";
+import * as React from "react";
 import { View } from "react-native";
 import { Canvas, FitBox, Path, rect } from "@shopify/react-native-skia";
 import { Feather } from "@expo/vector-icons";
 
-import {} from "../Widget/Widget";
-import { Widget } from "../Widget";
+import { Widget, WidgetHeader, WidgetBody } from "../Widget";
 
 export type PressureWidgetPropsType = {
   width: number;
@@ -15,12 +14,12 @@ export const PressureWidget = ({ width, height }: PressureWidgetPropsType) => {
   return (
     <>
       <Widget width={width} height={height}>
-        <Widget.Header
+        <WidgetHeader
           Icon={Feather}
           iconProps={{ name: "sun" }}
           contentText="Pressure"
         />
-        <Widget.Body>
+        <WidgetBody>
           <View
             style={{
               flex: 1,
@@ -47,7 +46,7 @@ export const PressureWidget = ({ width, height }: PressureWidgetPropsType) => {
               </FitBox>
             </Canvas>
           </View>
-        </Widget.Body>
+        </WidgetBody>
       </Widget>
     </>
   );

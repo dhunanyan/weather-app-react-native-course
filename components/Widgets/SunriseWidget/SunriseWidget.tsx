@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import React from "react";
+import * as React from "react";
 import {
   Canvas,
   Circle,
@@ -11,14 +11,14 @@ import {
   vec,
 } from "@shopify/react-native-skia";
 import { Feather } from "@expo/vector-icons";
-import { Widget, WidgetDimensionsProps } from "../Widget/Widget";
+import { Widget, WidgetHeader, WidgetBody, WidgetFooter } from "../Widget";
 
-export type UvIndexWidgetPropsType = {
+export type SunriseWidgetPropsType = {
   width: number;
   height: number;
 };
 
-export const SunriseWidget = ({ width, height }: WidgetDimensionsProps) => {
+export const SunriseWidget = ({ width, height }: SunriseWidgetPropsType) => {
   const cosWave = () => {
     const path = Skia.Path.Make();
     const canvasHeight = height / 2;
@@ -46,12 +46,12 @@ export const SunriseWidget = ({ width, height }: WidgetDimensionsProps) => {
   return (
     <>
       <Widget width={width} height={height}>
-        <Widget.Header
+        <WidgetHeader
           Icon={Feather}
           iconProps={{ name: "sunrise" }}
           contentText="sunrise"
         />
-        <Widget.Body contentText="5:28 AM" contentSize="Large">
+        <WidgetBody contentText="5:28 AM" contentSize="Large">
           <Canvas style={{ flex: 1 }}>
             <Path path={cosWave()} style={"stroke"} strokeWidth={5}>
               <LinearGradient
@@ -89,8 +89,8 @@ export const SunriseWidget = ({ width, height }: WidgetDimensionsProps) => {
               <Paint style="stroke" strokeWidth={2} color="white" />
             </Circle>
           </Canvas>
-        </Widget.Body>
-        <Widget.Footer contentText="Sunset: 7:25PM" />
+        </WidgetBody>
+        <WidgetFooter contentText="Sunset: 7:25PM" />
       </Widget>
     </>
   );

@@ -1,11 +1,10 @@
 import * as React from "react";
 import Animated, {
-  interpolate,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
-import { View, Text, Pressable, LayoutChangeEvent } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import { Canvas, Line, LinearGradient, vec } from "@shopify/react-native-skia";
 
 import { ForecastType } from "@models";

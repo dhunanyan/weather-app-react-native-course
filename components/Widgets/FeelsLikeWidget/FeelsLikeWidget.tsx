@@ -1,7 +1,7 @@
-import React from "react";
+import * as React from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
 
-import { Widget } from "../Widget";
+import { Widget, WidgetHeader, WidgetBody, WidgetFooter } from "../Widget";
 import { DEGREE_SYMBOL } from "@config";
 
 export type FeelsLikeWidgetPropsType = {
@@ -15,16 +15,13 @@ export const FeelsLikeWidget = ({
 }: FeelsLikeWidgetPropsType) => {
   return (
     <Widget width={width} height={height}>
-      <Widget.Header
+      <WidgetHeader
         contentText="Feels Like"
         Icon={FontAwesome5}
         iconProps={{ name: "temperature-high" }}
       />
-      <Widget.Body
-        contentText={`19${DEGREE_SYMBOL}`}
-        contentSize="Large"
-      ></Widget.Body>
-      <Widget.Footer contentText="Similar to the actual temperature." />
+      <WidgetBody contentText={`19${DEGREE_SYMBOL}`} contentSize="Large" />
+      <WidgetFooter contentText="Similar to the actual temperature." />
     </Widget>
   );
 };

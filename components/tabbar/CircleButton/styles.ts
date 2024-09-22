@@ -1,4 +1,4 @@
-import { ScaledSize, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 
 export const styling = (width: number, height: number) =>
   StyleSheet.create({
