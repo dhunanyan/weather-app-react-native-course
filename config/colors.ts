@@ -89,24 +89,6 @@ export const COLORS = {
       "0%": "#dddddd",
       "100%": "transparent",
     },
-    Separator: {
-      Line: {
-        color: "rgba(255, 255, 255, 0.3)",
-      },
-      Shadow: {
-        blur: 0,
-        color: "rgba(0, 0, 0, 0.2)",
-      },
-    },
-    ForecastControl: {
-      Line: {
-        strokeWidth: 3,
-      },
-      LinearGradient: {
-        "0%": "rgba(167, 132, 137, 0)",
-        "100%": "rgba(167, 132, 137, 1)",
-      },
-    },
     ForecastCapsule: {
       RoundedRect: {
         color: "rgba(72, 49, 157, 0.2)",

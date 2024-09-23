@@ -12,7 +12,6 @@ import BottomSheet from "@gorhom/bottom-sheet";
 import { ForecastSheetBackground } from "./ForecastSheetBackground";
 import { ForecastControl } from "./ForecastControl";
 import { ForecastScroll } from "./ForecastScroll";
-import { Separator } from "./Separator";
 import { Widgets } from "../Widgets/Widgets";
 
 import { useApplicationDimensions } from "@hooks";
@@ -91,7 +90,6 @@ export const ForecastSheet = () => {
     >
       <>
         <ForecastControl selectForecastType={selectForecastType} />
-        <Separator width={width} height={3} />
         <ScrollView
           contentContainerStyle={styles.scrollView}
           showsVerticalScrollIndicator={false}
