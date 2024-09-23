@@ -8,11 +8,15 @@ import { StatusBar } from "expo-status-bar";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import "react-native-reanimated";
-import { WeatherDataProvider } from "@context";
+
+import { fetchWeatherData, getLocationData } from "@services";
+import { useWeatherData, WeatherDataProvider } from "@context";
+import { eventEmitter } from "@utils";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const { setWeatherData } = useWeatherData();
   const [fontsLoaded] = useFonts({
     "SF-Regular": require("@assets/fonts/SF-Pro-Display-Regular.otf"),
     "SF-Semibold": require("@assets/fonts/SF-Pro-Display-Semibold.otf"),
@@ -24,6 +28,29 @@ export default function RootLayout() {
       SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
+
+  React.useEffect(() => {
+    const handleLocationEvent = async () => {
+      const locationData = await getLocationData();
+      if (!locationData) {
+        return;
+      }
+
+      const { latitude, longitude } = locationData;
+
+      if (latitude === null || longitude === null) {
+        return;
+      }
+
+      const weatherData = await fetchWeatherData(latitude, longitude);
+      setWeatherData(weatherData);
+    };
+
+    const listener = eventEmitter.addListener("locationEvent", async () => {
+      await handleLocationEvent();
+      return () => listener.remove();
+    });
+  }, [setWeatherData]);
 
   if (!fontsLoaded) {
     return null;

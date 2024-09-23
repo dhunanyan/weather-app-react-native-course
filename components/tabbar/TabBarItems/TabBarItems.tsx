@@ -1,14 +1,15 @@
 import * as React from "react";
 import { Pressable, View } from "react-native";
+import { useNavigation } from "expo-router";
 
-import { useApplicationDimensions } from "@hooks";
-
-import { ListIcon, MapIcon } from "../icons";
 import { TrapezoidBackground } from "../TrapezoidBackground";
 import { CircleButton } from "../CircleButton";
+import { ListIcon, MapIcon } from "../icons";
+
+import { useApplicationDimensions } from "@hooks";
+import { eventEmitter } from "@utils";
 
 import { styling } from "./styles";
-import { useNavigation } from "expo-router";
 
 export const TabBarItems = () => {
   const navigation = useNavigation<AppNavigationProps>();
@@ -23,7 +24,9 @@ export const TabBarItems = () => {
 
   return (
     <View style={styles.container}>
-      <MapIcon />
+      <Pressable onPress={() => eventEmitter.emit("locationEvent")}>
+        <MapIcon />
+      </Pressable>
       <TrapezoidBackground width={trapezoidWidth} height={trapezoidHeight} />
 
       <Pressable style={styles.pessable}>

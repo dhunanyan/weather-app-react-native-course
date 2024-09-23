@@ -3,3 +3,4 @@ export {
   getDayOfWeek,
   getCurrentDisplayText,
 } from "./dateHelper";
+export { eventEmitter } from "./eventEmitter";
