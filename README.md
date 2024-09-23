@@ -59,3 +59,17 @@ Later on go to the terminal in which you run the app (the one with the QR code) 
 - `"a"` - for Android Simulator
 - `"i"` - for IOS Simulator
 - `"w"` - to open up project in Web Browser (However unfortunately, there is no support for Web Browser :disappointed:)
+
+# Install internal distribution builds
+
+## Android
+
+| version | build                                                                                                                                               |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| v1.0.0  | [f6d63b07-3375-4fe4-936e-b31229c9859c](https://expo.dev/accounts/dhunanyan/projects/weather-app-course/builds/f6d63b07-3375-4fe4-936e-b31229c9859c) |
+
+## IOS
+
+| version | build                                                                                                                                               |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| v1.0.0  | [f6d63b07-3375-4fe4-936e-b31229c9859c](https://expo.dev/accounts/dhunanyan/projects/weather-app-course/builds/f6d63b07-3375-4fe4-936e-b31229c9859c) |
