@@ -8,6 +8,7 @@ import { StatusBar } from "expo-status-bar";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import "react-native-reanimated";
+import { WeatherDataProvider } from "@context";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -30,13 +31,15 @@ export default function RootLayout() {
 
   return (
     <SafeAreaProvider>
-      <GestureHandlerRootView style={styles.gestureHandlerRootView}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-        <StatusBar style="light" />
-      </GestureHandlerRootView>
+      <WeatherDataProvider>
+        <GestureHandlerRootView style={styles.gestureHandlerRootView}>
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="+not-found" />
+          </Stack>
+          <StatusBar style="light" />
+        </GestureHandlerRootView>
+      </WeatherDataProvider>
     </SafeAreaProvider>
   );
 }

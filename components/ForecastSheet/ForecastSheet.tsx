@@ -15,15 +15,18 @@ import { ForecastScroll } from "./ForecastScroll";
 import { Widgets } from "../Widgets/Widgets";
 
 import { useApplicationDimensions } from "@hooks";
-import { useForecastSheetPosition } from "@context";
+import { useForecastSheetPosition, useWeatherData } from "@context";
 import { ForecastType } from "@models";
-import { hourly, weekly } from "@data";
 
 import { styles } from "./styles";
 
 export const ForecastSheet = () => {
   const [selectedForecastType, selectForecastType] =
     React.useState<ForecastType>(ForecastType.Hourly);
+  const {
+    weatherData: { hourlyForecast, weeklyForecast },
+  } = useWeatherData();
+
   const { width, height } = useApplicationDimensions();
 
   const cornerRadius = 44;
@@ -97,7 +100,7 @@ export const ForecastSheet = () => {
           <View style={styles.forecastScrollsView}>
             <Animated.View style={[animatedHourlyStyles]}>
               <ForecastScroll
-                forecastList={hourly}
+                forecastList={hourlyForecast}
                 capsuleRadius={capsuleRadius}
                 capsuleHeight={capsuleHeight}
                 capsuleWidth={capsuleWidth}
@@ -105,7 +108,7 @@ export const ForecastSheet = () => {
             </Animated.View>
             <Animated.View style={[animatedWeeklyStyles]}>
               <ForecastScroll
-                forecastList={weekly}
+                forecastList={weeklyForecast}
                 capsuleRadius={capsuleRadius}
                 capsuleHeight={capsuleHeight}
                 capsuleWidth={capsuleWidth}

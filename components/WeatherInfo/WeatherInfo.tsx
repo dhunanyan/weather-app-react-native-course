@@ -8,18 +8,17 @@ import Animated, {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Extrapolate } from "@shopify/react-native-skia";
 
-import { Weather } from "@models";
-import { useForecastSheetPosition } from "@context";
+import { useForecastSheetPosition, useWeatherData } from "@context";
 import { SEPARATOR_SYMBOL, DEGREE_SYMBOL } from "@config";
 
 import { styling } from "./styles";
 
-type WeatherInfoPropsType = {
-  weather: Weather;
-};
+export const WeatherInfo = () => {
+  const { weatherData } = useWeatherData();
+  const {
+    currentWeather: { city, temperature, condition, high, low },
+  } = weatherData;
 
-export const WeatherInfo = ({ weather }: WeatherInfoPropsType) => {
-  const { city, temperature, condition, high, low } = weather;
   // STATUSBAR OFFSET
   const { top: statusBarOffset } = useSafeAreaInsets();
   const topMargin = 51;
