@@ -2,6 +2,11 @@
 
 [\[UDEMY\] Mastering React Native, React Native Skia, and Re-animated.](https://www.udemy.com/course/mastering-react-native-react-native-skia-and-re-animated)
 
+# Quick preview
+
+| ![IOS Preview 1](https://github.com/dhunanyan/weather-app-react-native-course/blob/master/docs/ios-1.gif?raw=true) | ![IOS Preview 2](https://github.com/dhunanyan/weather-app-react-native-course/blob/master/docs/ios-2.gif?raw=true) |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+
 # Cloning the project
 
 Clone the project simply by running:
@@ -62,14 +67,6 @@ Later on go to the terminal in which you run the app (the one with the QR code) 
 
 # Install internal distribution builds
 
-## Android
-
-| version | build                                                                                                                                               |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| v1.0.0  | [f6d63b07-3375-4fe4-936e-b31229c9859c](https://expo.dev/accounts/dhunanyan/projects/weather-app-course/builds/f6d63b07-3375-4fe4-936e-b31229c9859c) |
-
-## IOS
-
-| version | build                                                                                                                                               |
+| version | android build                                                                                                                                       |
 | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | v1.0.0  | [f6d63b07-3375-4fe4-936e-b31229c9859c](https://expo.dev/accounts/dhunanyan/projects/weather-app-course/builds/f6d63b07-3375-4fe4-936e-b31229c9859c) |
